@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InkVoyage Privacy Policy</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8f2f5;
+      --bg-deep: #efe3ea;
+      --card: rgba(255, 255, 255, 0.82);
+      --card-strong: rgba(255, 255, 255, 0.92);
+      --text: #2b1d29;
+      --muted: #715b6f;
+      --line: rgba(122, 83, 114, 0.18);
+      --accent: #9a4d82;
+      --accent-deep: #6e2f5c;
+      --accent-soft: #f4dfe9;
+      --glow: rgba(154, 77, 130, 0.14);
+      --shadow: 0 24px 60px rgba(85, 41, 72, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font: 16px/1.72 Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 38%),
+        radial-gradient(circle at top right, rgba(244, 223, 233, 0.9) 0%, rgba(244, 223, 233, 0) 34%),
+        linear-gradient(180deg, #fff9fc 0%, var(--bg) 42%, var(--bg-deep) 100%);
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      border-radius: 999px;
+      filter: blur(10px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::before {
+      top: 56px;
+      left: -88px;
+      width: 240px;
+      height: 240px;
+      background: rgba(214, 173, 195, 0.22);
+    }
+
+    body::after {
+      right: -80px;
+      bottom: 48px;
+      width: 280px;
+      height: 280px;
+      background: rgba(196, 157, 180, 0.22);
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 28px 18px 56px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 34px 32px;
+      border: 1px solid rgba(255, 255, 255, 0.58);
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 246, 250, 0.78) 55%, rgba(245, 226, 236, 0.88) 100%);
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -28px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 70%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      color: #341e30;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin: 14px 0 0;
+      font-size: 18px;
+      color: #5d495a;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(154, 77, 130, 0.14);
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--muted);
+      font-size: 13px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .panel {
+      grid-column: span 12;
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 16px 40px var(--glow);
+    }
+
+    .panel.feature {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 250, 252, 0.82) 100%);
+      border-color: rgba(154, 77, 130, 0.16);
+    }
+
+    .panel h2 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      line-height: 1.18;
+      color: #352131;
+    }
+
+    .panel p,
+    .panel li {
+      color: #5e4a5c;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .list li {
+      margin: 8px 0;
+    }
+
+    .contact-box {
+      display: grid;
+      gap: 12px;
+      padding: 16px 18px;
+      border: 1px solid rgba(154, 77, 130, 0.14);
+      border-radius: 18px;
+      background: var(--card-strong);
+    }
+
+    .contact-link {
+      font-size: 18px;
+      color: var(--accent-deep);
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+
+    .two-up {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .mini-card {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(154, 77, 130, 0.12);
+    }
+
+    .mini-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: #3b2435;
+    }
+
+    a {
+      color: var(--accent-deep);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 18px;
+      padding: 8px 4px 0;
+      color: var(--muted);
+      font-size: 13px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    @media (min-width: 860px) {
+      .panel.span-7 { grid-column: span 7; }
+      .panel.span-5 { grid-column: span 5; }
+      .panel.span-6 { grid-column: span 6; }
+    }
+
+    @media (max-width: 720px) {
+      main {
+        padding: 16px 14px 42px;
+      }
+
+      .hero {
+        padding: 24px 20px;
+        border-radius: 22px;
+      }
+
+      .panel {
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      .two-up {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <span class="eyebrow">InkVoyage Privacy</span>
+      <h1>InkVoyage Privacy Policy</h1>
+      <p class="hero-copy">
+        InkVoyage is a mobile reading experience built around serial romance, emotional storytelling,
+        chapter progress, bookshelf management, and reader subscriptions. This policy explains what information
+        the app uses, how that information supports the reader experience, and how you can contact us with privacy questions.
+      </p>
+      <div class="hero-meta">
+        <span class="pill">Last updated: March 25, 2026</span>
+        <span class="pill">Applies to InkVoyage for iPhone and iPad</span>
+        <span class="pill">Privacy details for reading, purchases, and local app data</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="panel feature span-7">
+        <h2>Information Used in the App</h2>
+        <p>
+          InkVoyage is designed to use the information needed to deliver a reader experience, maintain reading progress,
+          manage purchases, and support app functionality. Depending on how you use the app, this may include:
+        </p>
+        <ul class="list">
+          <li><strong>Reading data:</strong> chapter progress, last-viewed state, bookshelf state, unlock state, and other on-device reader records used to resume your stories correctly.</li>
+          <li><strong>Local app settings:</strong> onboarding state, reader preferences, display choices, and other local configuration needed for the app to function.</li>
+          <li><strong>Subscription and purchase status:</strong> product identifiers, transaction metadata, entitlement state, and restore-purchase status required to confirm paid access.</li>
+          <li><strong>Basic support context you provide:</strong> if you contact us, we may receive the information you include in your message, such as screenshots, device details, and the title of the affected story.</li>
+        </ul>
+      </article>
+
+      <article class="panel span-5">
+        <h2>Our Privacy Approach</h2>
+        <div class="two-up">
+          <div class="mini-card">
+            <h3>Reader First</h3>
+            <p>
+              We use app data primarily to support reading continuity, content access, and core app behavior.
+            </p>
+          </div>
+          <div class="mini-card">
+            <h3>No Sale of Personal Data</h3>
+            <p>
+              We do not sell your personal data to advertisers or data brokers.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel span-6">
+        <h2>In-App Purchases and Billing</h2>
+        <p>
+          Subscription purchases and billing are processed by Apple through the App Store. We do not receive or store your
+          full payment card information.
+        </p>
+        <p>
+          The app may use transaction-related metadata to verify active subscription access, restore purchases, and maintain
+          the correct entitlement state in the reader.
+        </p>
+      </article>
+
+      <article class="panel span-6">
+        <h2>Reading Progress and Local Storage</h2>
+        <p>
+          To deliver resume-reading behavior, bookshelf state, chapter access, and other reading features, InkVoyage stores
+          app data locally on your device. This may include reading position, current chapter, recently viewed books, and
+          related reader state.
+        </p>
+        <p>
+          Local data may remain on your device until it is removed through app actions, app deletion, or device-level cleanup.
+        </p>
+      </article>
+
+      <article class="panel span-6">
+        <h2>Notifications and Device Permissions</h2>
+        <p>
+          If InkVoyage requests any device permission in the future, such permission will only be used for the corresponding
+          feature inside the app. You can manage iOS permissions through your device settings at any time.
+        </p>
+        <p>
+          Availability of some features may depend on permission state, device configuration, and Apple platform behavior.
+        </p>
+      </article>
+
+      <article class="panel span-6">
+        <h2>How Information Is Shared</h2>
+        <ul class="list">
+          <li>We do not sell personal data.</li>
+          <li>We do not share in-app reading content with third-party advertising networks for behavioral advertising.</li>
+          <li>Data required for app functionality may be processed by Apple services involved in App Store billing and entitlement handling.</li>
+        </ul>
+      </article>
+
+      <article class="panel span-6">
+        <h2>Retention and Deletion</h2>
+        <ul class="list">
+          <li>Locally stored app data remains on your device until it is removed, overwritten, or the app is deleted.</li>
+          <li>Subscription and entitlement records visible inside the app may persist as needed to restore access state correctly.</li>
+          <li>If you contact support by email, the information you send may be retained as needed to respond and resolve the issue.</li>
+        </ul>
+      </article>
+
+      <article class="panel span-6">
+        <h2>Security</h2>
+        <p>
+          We rely on Apple platform protections and app-side storage practices appropriate to the functionality provided.
+          No storage or transmission method can be guaranteed to be completely secure, but we aim to limit data use to
+          what is necessary for reader functionality and support.
+        </p>
+      </article>
+
+      <article class="panel span-6">
+        <h2>Children</h2>
+        <p>
+          InkVoyage is a fiction reading app intended for a mature reading audience and is not directed to children under 13.
+          If you believe information was provided in violation of applicable law, contact us so we can review the issue.
+        </p>
+      </article>
+
+      <article class="panel">
+        <h2>Changes to This Policy</h2>
+        <p>
+          We may update this Privacy Policy to reflect product changes, legal requirements, or operational updates.
+          When we do, the date at the top of this page will be revised.
+        </p>
+      </article>
+
+      <article class="panel">
+        <h2>Contact</h2>
+        <div class="contact-box">
+          <div class="meta">Privacy contact</div>
+          <a class="contact-link" href="mailto:killline2026@gmail.com">killline2026@gmail.com</a>
+          <div class="meta">Use this email for privacy questions, support escalation, or data-handling concerns related to InkVoyage.</div>
+        </div>
+        <p>
+          For support and subscription information, you can also visit our
+          <a href="../support/">Support page</a>.
+        </p>
+      </article>
+    </section>
+
+    <footer>
+      InkVoyage privacy policy. For privacy questions, contact
+      <a href="mailto:killline2026@gmail.com">killline2026@gmail.com</a>.
+    </footer>
+  </main>
+</body>
+</html>
